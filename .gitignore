@@ -1,0 +1,8 @@
+Train/
+test.py
+script_plot.py
+*.spacy
+*.pdf
+output
+Annotations
+Articles
