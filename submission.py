@@ -1,12 +1,11 @@
 import spacy
 import json
 
-# Load your trained SpaCy model
+# Load the trained SpaCy model-best
 nlp = spacy.load("output/model-best")
 
 # Load evaluation data from a JSON file
-#with open("Test_Data/articles_test.json", "r") as f:
-with open("Test_Data/articles_test.json", "r") as f:
+with open("Test_Data/articles_test.json", "r") as f: # path to your Test_Data
     evaluation_data = json.load(f)
 
 # Process and collect outputs

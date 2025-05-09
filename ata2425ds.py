@@ -39,20 +39,20 @@ def read_and_create_data(type):
     if(type == 'train'):
         train_sets = (('platinum_quality', 'train_platinum.json'), ('gold_quality', 'train_gold.json'), ('silver_quality', 'train_silver.json'), ('bronze_quality', 'train_bronze.json'))
         for quality, file in train_sets:
-            path = "Annotations/Train/{quality}/json_format/{file}".format(quality=quality, file=file)
+            path = "Annotations/Train/{quality}/json_format/{file}".format(quality=quality, file=file) # path to your training data
             with open(path, 'r', encoding='utf-8') as f:
                 train_data = json.load(f)
                 all_docs.append(train_data)
         create_doc_bin(all_docs, 'train.spacy')
 
     elif(type == 'dev'):
-        path = "Annotations/Dev/json_format/dev.json"
+        path = "Annotations/Dev/json_format/dev.json" # path to your deve data
         with open(path, 'r', encoding='utf-8') as f:
             dev_data = [json.load(f)]
         create_doc_bin(dev_data, 'dev.spacy')
 
     else:
-        print("Must provide a parameter")
+        print("Error: specify 'train' or 'dev' as argument")
 
 read_and_create_data('train')
 read_and_create_data('dev')
